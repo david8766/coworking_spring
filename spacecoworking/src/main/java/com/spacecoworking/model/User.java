@@ -4,17 +4,14 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
 	
 	@Id
@@ -23,7 +20,7 @@ public class User {
 	@Column(name = "lastname")
 	private String lastname;
 
-	@Column(name = "firstnale")
+	@Column(name = "firstname")
 	private String firstname;
 	@Column(name = "adresse")
 	private String address;
@@ -35,9 +32,8 @@ public class User {
 	private String phone;
 	@Column(name = "role")
 	private String role;
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "Reservation", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "space_id") })
-	List<Space> spaces;
+	
+	@ManyToMany(mappedBy = "users")
+	private List<Space> spaces;
 
 }

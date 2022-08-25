@@ -12,19 +12,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Reservation")
+@Table(name = "reservation")
 public class Reservation {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "dureeRservation"  )
+	@Column(name = "reservationDuration"  )
 	private int reservationDuration;
 	@Column(name = "starDate")
 	private Date startDate;
 	@Column(name = "endDate")
 	private Date endDate;
-	@Column(name = "montant")
+	@Column(name = "amount")
 	private float amount;
 	
 	@ManyToOne
