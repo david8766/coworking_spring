@@ -1,13 +1,12 @@
 package com.spacecoworking.model;
 
-import java.util.List;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +14,7 @@ import javax.persistence.Table;
 public class Space {
 	
 	@Id
+	@Column(name="space_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
@@ -37,7 +37,5 @@ public class Space {
 	@Column(name = "region")
 	private String region;
 
-	@ManyToMany
-	private List<User> users;
 
 }
