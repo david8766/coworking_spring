@@ -20,7 +20,7 @@ public class Space {
 
 	@Column(name = "name")
 	private String name;
-	@Column(name = "adress")
+	@Column(name = "address")
 	private String address;
 	@Column(name = "zipcode")
 	private String zipcode;
