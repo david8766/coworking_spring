@@ -17,7 +17,7 @@ public class Reservation {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int reservation_id;
 	@Column(name = "reservationDuration"  )
 	private int reservationDuration;
 	@Column(name = "starDate")

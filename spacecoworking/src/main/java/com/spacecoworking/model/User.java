@@ -21,7 +21,7 @@ public class User {
 	private String lastname;
 	@Column(name = "firstname")
 	private String firstname;
-	@Column(name = "adresse")
+	@Column(name = "address")
 	private String address;
 	@Column(name = "zipcode")
 	private String zipcode;
