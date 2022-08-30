@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import com.spacecoworking.model.Space;
 import com.spacecoworking.service.SpaceService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/rest/space")
 public class SpaceController {
 	@Autowired
@@ -27,7 +29,7 @@ public class SpaceController {
 	@GetMapping
 	public Page<Space> findAll(Pageable pageable) {
 		return this.spaceService.findAll(pageable);
-		}
+	}
 
 	@GetMapping("/limit")
 
