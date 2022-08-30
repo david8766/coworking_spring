@@ -14,7 +14,7 @@ import com.spacecoworking.repository.SpaceRepository;
 @Service
 public class SpaceService {
 	
-	private static final int LIMIT = 10;
+	private static final int LIMIT = 6;
 	@Autowired
 
 	public SpaceRepository spaceRepository;
@@ -35,5 +35,10 @@ public class SpaceService {
 		Page<Space> page = spaceRepository.findAll(PageRequest.of(0, LIMIT));
 		return page.getContent();
 
+	}
+	 
+	public List<String> getCities(){
+		return this.spaceRepository.getCities();
+		
 	}
 }

@@ -32,10 +32,16 @@ public class SpaceController {
 	}
 
 	@GetMapping("/limit")
-
 	public List<Space> findTop6() {
 
 		return this.spaceService.getAllLimited();
 
 	}
+	
+	@GetMapping("/cities")
+	public List<String> getCities() {
+		return this.spaceService.getCities();
+
+	}
+	
 }

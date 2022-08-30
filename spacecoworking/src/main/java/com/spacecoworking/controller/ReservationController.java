@@ -32,6 +32,7 @@ public class ReservationController {
 	public List<Reservation> findAllReservationByUserId(@PathVariable("user_id") Integer user_id) {
 		return this.reservationService.findAllReservationByUserId(user_id);
 	}*/
+	
 	@DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer reservation_id) {
         this.reservationService.delete(reservation_id);
