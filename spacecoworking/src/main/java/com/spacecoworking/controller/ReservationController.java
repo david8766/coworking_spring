@@ -27,11 +27,11 @@ public class ReservationController {
 	public Reservation createReservation(@RequestBody Reservation reservationToCreate) {
 		return this.reservationService.create(reservationToCreate);
 	}
-	
+	/*
 	@GetMapping("/{user_id}")
 	public List<Reservation> findAllReservationByUserId(@PathVariable("user_id") Integer user_id) {
 		return this.reservationService.findAllReservationByUserId(user_id);
-	}
+	}*/
 	@DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer reservation_id) {
         this.reservationService.delete(reservation_id);
