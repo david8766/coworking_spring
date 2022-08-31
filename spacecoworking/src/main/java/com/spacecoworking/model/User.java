@@ -111,6 +111,13 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", lastname=" + lastname + ", firstname=" + firstname + ", address=" + address
+				+ ", zipcode=" + zipcode + ", city=" + city + ", phone=" + phone + ", email=" + email + ", password="
+				+ password + "]";
+	}
+
     
     
 

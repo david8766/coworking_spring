@@ -38,11 +38,12 @@ public class UserController {
 	
 	@PostMapping
 	public User createUser(@RequestBody @Valid User userToCreate) {
+		System.out.println(userToCreate.toString());
 		return this.userService.create(userToCreate);
 	}
 	
 	@PutMapping
-	public User updateSpecies(@RequestBody User updateUser) {
+	public User updateUser(@RequestBody User updateUser) {
 		return this.userService.update(updateUser);
 	}
 	@DeleteMapping("/{id}")
