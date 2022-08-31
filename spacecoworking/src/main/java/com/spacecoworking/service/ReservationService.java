@@ -18,12 +18,11 @@ public class ReservationService {
 	public Reservation create(Reservation reservationToCreate) {
 		return this.reservationRepository.save(reservationToCreate);
 	}
-	/*
-	public List<Reservation> findAllReservationByUserId(Integer user_id){
+	public Iterable<Reservation> findAllReservationByUserId(Integer user_id){
 		
-		return this.reservationRepository.findAllReservationByUserId(user_id);
+		return this.reservationRepository.findAll();
 	
-	}*/
+	}
 	public void delete(Integer reservation_id) {
 		this.reservationRepository.deleteById(reservation_id);
 	}

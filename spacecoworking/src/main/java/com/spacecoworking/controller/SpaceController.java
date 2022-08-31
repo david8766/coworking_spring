@@ -21,7 +21,7 @@ public class SpaceController {
 	@Autowired
 	private SpaceService spaceService;
 
-	@GetMapping("/{city}")
+	@GetMapping("/city/{city}")
 	public List<Space> findByCity(@PathVariable("city") String city) {
 		return this.spaceService.findByCity(city);
 	}
@@ -43,5 +43,12 @@ public class SpaceController {
 		return this.spaceService.getCities();
 
 	}
+	
+	@GetMapping("/{id}")
+	public Space getById(@PathVariable("id") Integer id) {
+		return this.spaceService.findById(id);
+
+	}
+	
 	
 }

@@ -2,6 +2,8 @@ package com.spacecoworking.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,15 +26,16 @@ public class ReservationController {
 	ReservationService reservationService;
 	
 	@PostMapping
-	public Reservation createReservation(@RequestBody Reservation reservationToCreate) {
+	public Reservation createReservation(@RequestBody @Valid Reservation reservationToCreate) {
 		return this.reservationService.create(reservationToCreate);
 	}
-	/*
-	@GetMapping("/{user_id}")
-	public List<Reservation> findAllReservationByUserId(@PathVariable("user_id") Integer user_id) {
-		return this.reservationService.findAllReservationByUserId(user_id);
-	}*/
 	
+	@GetMapping("/{id}")
+	public Iterable<Reservation> findAllReservationByUserId(@PathVariable("id") Integer user_id) {
+	
+	 return this.reservationService.findAllReservationByUserId(user_id); 
+	 
+	}
 	@DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer reservation_id) {
         this.reservationService.delete(reservation_id);

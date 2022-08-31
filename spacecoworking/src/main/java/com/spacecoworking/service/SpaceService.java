@@ -2,6 +2,8 @@ package com.spacecoworking.service;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.PageRequest;
 
 import com.spacecoworking.model.Space;
+import com.spacecoworking.model.User;
 import com.spacecoworking.repository.SpaceRepository;
 
 @Service
@@ -41,4 +44,10 @@ public class SpaceService {
 		return this.spaceRepository.getCities();
 		
 	}
+	
+	public Space findById(Integer id) {
+		return this.spaceRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+	}
+	
+	
 }

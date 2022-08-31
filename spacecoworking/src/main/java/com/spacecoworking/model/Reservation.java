@@ -1,5 +1,6 @@
 package com.spacecoworking.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,8 +14,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "reservation")
-public class Reservation {
+public class Reservation implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reservation_id;
@@ -27,14 +32,15 @@ public class Reservation {
 	@Column(name = "amount")
 	private float amount;
 	
+	
 	@ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable=false)
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "space_id")
+    @JoinColumn(name = "space_id",nullable=false)
     private Space space;
-   
+
 	public Reservation() {
 		super();
 	}
@@ -106,6 +112,11 @@ public class Reservation {
 	public void setSpace(Space space) {
 		this.space = space;
 	}
+
 	
+
 	
+   
+    
+
 }
