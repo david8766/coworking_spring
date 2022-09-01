@@ -31,6 +31,11 @@ public class UserController {
 		return this.userService.findById(id);
 	}
 	
+	@GetMapping("/{email}/{password}")
+	public User checkUser(@PathVariable("email") String email, @PathVariable("password") String password) {
+		return this.userService.checkUser(email,password);
+	}
+	
 	@GetMapping
 	public Page<User> findAll(Pageable pageable) {
 		return this.userService.findAll(pageable);

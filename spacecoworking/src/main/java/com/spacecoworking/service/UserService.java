@@ -26,6 +26,10 @@ public class UserService {
 		return this.userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
 	}
 	
+	public User checkUser(String email,String password) {
+		return this.userRepository.checkUser(email,password);
+	}
+	
 	public Page<User> findAll(Pageable pageable) {
 		
 		return this.userRepository.findAll(pageable);
