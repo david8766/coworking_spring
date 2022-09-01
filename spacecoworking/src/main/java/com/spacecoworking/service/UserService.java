@@ -27,7 +27,7 @@ public class UserService {
 	}
 	
 	public User checkUser(String email,String password) {
-		return this.userRepository.checkUser(email,password);
+		return this.userRepository.checkUser(email, password);
 	}
 	
 	public Page<User> findAll(Pageable pageable) {

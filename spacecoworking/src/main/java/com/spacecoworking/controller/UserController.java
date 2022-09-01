@@ -33,7 +33,7 @@ public class UserController {
 	
 	@GetMapping("/{email}/{password}")
 	public User checkUser(@PathVariable("email") String email, @PathVariable("password") String password) {
-		return this.userService.checkUser(email,password);
+		return this.userService.checkUser(email, password);
 	}
 	
 	@GetMapping
